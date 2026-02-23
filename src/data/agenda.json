@@ -1,0 +1,6 @@
+{
+  "vagas": { "current": 5, "max": 20 },
+  "emAnalise": { "current": 23, "max": 30 },
+  "fila": { "current": 4, "max": 10 },
+  "finalizados": { "current": 75, "max": 100 }
+}
