@@ -37,20 +37,26 @@ Este é o site institucional de uma designer gráfica, desenvolvido para atrair 
 
 ## Estrutura do Projeto
 
+```text
 src/
-├── app/ # Rotas e API (App Router)
-│ ├── api/send-email/ # Endpoint para envio do formulário
-│ └── page.tsx # Página principal
-├── components/ # Componentes reutilizáveis
-│ ├── ui/ # Botão, Container, Section
-│ ├── layout/ # Navbar, Footer, MobileMenu, ThemeToggle
-│ ├── sections/ # Hero, Agenda, Promo, Services, Contact
-│ ├── services/ # ServiceCard, ServiceModal
-│ └── agenda/ # CircularProgress, AgendaStats
-├── data/ # Dados estáticos (agenda.json, services.ts)
-├── lib/ # Funções utilitárias e validações
-├── types/ # Definições TypeScript
-└── public/images/ # Ícones e ilustrações SVG
+├── app/                         # Rotas e API (App Router)
+│   ├── api/
+│   │   └── send-email/          # Endpoint para envio do formulário
+│   └── page.tsx                 # Página principal
+│
+├── components/                  # Componentes reutilizáveis
+│   ├── ui/                      # Botão, Container, Section
+│   ├── layout/                  # Navbar, Footer, MobileMenu, ThemeToggle
+│   ├── sections/                # Hero, Agenda, Promo, Services, Contact
+│   ├── services/                # ServiceCard, ServiceModal
+│   └── agenda/                  # CircularProgress, AgendaStats
+│
+├── data/                        # Dados estáticos (agenda.json, services.ts)
+├── lib/                         # Funções utilitárias e validações
+├── types/                       # Definições TypeScript
+└── public/
+    └── images/                  # Ícones e ilustrações SVG
+```
 
 ---
 
