@@ -58,7 +58,7 @@ src/
 └── public/
     └── images/                  # Ícones e ilustrações SVG
 
-
+```
 ---
 
 ## Funcionalidades Principais
@@ -136,9 +136,10 @@ O projeto está otimizado para deploy na Vercel. Conecte seu repositório e defi
 
 ---
 
-SQL para o Supabase
+## SQL para o Supabase
 Execute este código no SQL Editor do seu projeto Supabase para criar a tabela e a função de incremento:
 
+```text
 -- Criação da tabela agenda
 CREATE TABLE agenda (
   id SERIAL PRIMARY KEY,
@@ -149,6 +150,8 @@ CREATE TABLE agenda (
   mes TEXT NOT NULL,
   created_at TIMESTAMP DEFAULT NOW()
 );
+
+
 
 -- Registro inicial para fevereiro de 2026 (ajuste o mês conforme necessário)
 INSERT INTO agenda (vagas, em_analise, fila, finalizados, mes)
@@ -161,6 +164,8 @@ BEGIN
   UPDATE agenda SET em_analise = em_analise + 1 WHERE mes = target_month;
 END;
 $$ LANGUAGE plpgsql;
+
+```
 
 ---
 
