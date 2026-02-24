@@ -1,8 +1,15 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import { formSchema } from '@/lib/validations';
+import { supabase } from '@/lib/supabaseClient';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Função para obter o mês atual no formato YYYY-MM
+function getCurrentMonth() {
+  const date = new Date();
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+}
 
 export async function POST(request: Request) {
   try {
@@ -15,10 +22,10 @@ export async function POST(request: Request) {
 
     const { nome, sobrenome, email, telefone, mensagem } = parsed.data;
 
+    // Enviar e-mail via Resend
     await resend.emails.send({
-      from: 'onboarding@resend.dev', // substitir pelo meu domínio depois
+      from: 'onboarding@resend.dev',
       to: 'arianadeabreudesigndev@gmail.com',
-
       subject: 'Novo orçamento solicitado',
       html: `
         <h1>Novo contato</h1>
@@ -29,14 +36,20 @@ export async function POST(request: Request) {
       `,
     });
 
-    // Retornar sucesso + redirecionamento para WhatsApp
-    const whatsappNumber = '5522992430098'; // SEU NÚMERO
-    const text = encodeURIComponent(`Olá, acabei de enviar um orçamento pelo site. Meu nome: ${nome} ${sobrenome}. Mensagem: ${mensagem}`);
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${text}`;
+    // Incrementar o campo em_analise no Supabase
+    const currentMonth = getCurrentMonth();
+    const { error: supabaseError } = await supabase.rpc('increment_em_analise', {
+      target_month: currentMonth,
+    });
 
-    return NextResponse.json({ success: true, whatsappLink });
+    if (supabaseError) {
+      console.error('Erro ao incrementar contador no Supabase:', supabaseError);
+    }
+
+    // Retornar sucesso (apenas e-mail)
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error(error);
+    console.error('Erro na API:', error);
     return NextResponse.json({ error: 'Erro ao enviar' }, { status: 500 });
   }
 }
