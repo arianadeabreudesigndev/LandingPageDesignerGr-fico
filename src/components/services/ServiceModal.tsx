@@ -29,6 +29,7 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={{ duration: 0.10 }}
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
           onClick={onClose}
         >
@@ -36,15 +37,17 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ type: 'spring', damping: 25 }}
+            transition={{ type: 'spring', damping: 20, stiffness: 300, duration: 0.2 }}
             className="bg-[#1E1E1E] text-white rounded-lg max-w-lg w-full p-6 shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-2xl font-bold">{service.title}</h3>
-              <button onClick={onClose} className="p-1 hover:bg-gray-700 rounded">
-                {/* Ícone de fechar - tenho que fazer*/}
-                <img src="/images/fechar.svg" alt="Fechar" className="w-6 h-6" />
+              <button
+                onClick={onClose}
+                className="p-1 hover:bg-gray-700 rounded w-8 h-8 flex items-center justify-center"
+              >
+                <span className="text-2xl font-bold text-white">×</span>
               </button>
             </div>
             <p className="text-gray-300 mb-4">{service.fullDescription}</p>

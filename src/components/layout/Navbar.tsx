@@ -19,7 +19,6 @@ export default function Navbar() {
               className="h-11 w-auto"
             />
           </Link>
-
           <button
             onClick={() => setMenuOpen(true)}
             className="p-2 rounded-md hover:bg-gray-700 transition"
@@ -31,7 +30,6 @@ export default function Navbar() {
               className="w-6 h-6"
             />
           </button>
-
           <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
         </div>
       </Container>

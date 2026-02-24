@@ -12,16 +12,19 @@ export default function Promo() {
 
   return (
     <Section id="promo" className="bg-white text-white overflow-hidden relative">
+      {/* Versão para mobile: fundo retangular (sem clip-path) */}
+      <div className="absolute inset-0 bg-secondary block md:hidden" />
+
+      {/* Versão para telas médias/grandes: com clip-path */}
       <div
-        className="absolute inset-0 bg-secondary"
+        className="absolute inset-0 bg-secondary hidden md:block"
         style={{
-          clipPath: 'polygon(0% 0%, 100% 25%, 100% 80%, 0% 100%)'
+          clipPath: 'polygon(0% 0%, 100% 20%, 100% 90%, 0% 100%)'
         }}
       />
 
       <Container className="relative z-10">
-  
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -90,7 +93,7 @@ export default function Promo() {
             <img
               src="/images/LandpageExemplo.png"
               alt="Exemplo de landing page"
-              className="w-full max-w-5xl h-100 object-contain ml-40"
+              className="w-full max-w-5xl h-auto object-contain"
             />
           </motion.div>
         </div>

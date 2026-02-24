@@ -120,7 +120,7 @@ export interface Service {
     {
       id: 'documentos-timbrados',
       title: 'Documentos Timbrados',
-      shortDescription: 'Papel timbrado, envelopes, pastas personalizadas',
+      shortDescription: 'Papel timbrado, envelopes personalizadas',
       fullDescription: 'Criação de documentos timbrados com a identidade da marca (papel timbrado, envelopes, pastas). Necessário envio da logo em alta qualidade (caso não tenha sido feita por mim). Prazo de até 3 dias úteis.',
       includes: [
         'Papel timbrado',

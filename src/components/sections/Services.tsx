@@ -12,7 +12,6 @@ import { Service } from '@/types';
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
-
   const activeServices = services.filter(s => s.active);
 
   return (
@@ -21,7 +20,7 @@ export default function Services() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 uppercase">
           Serviços disponíveis
         </h2>
-        <h3 className="text-xl text-gray-600 dark:text-gray-400 text-center mb-12">
+        <h3 className="text-xl text-primary text-center mb-12">
           O que eu posso criar para você
         </h3>
 
@@ -30,14 +29,15 @@ export default function Services() {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 place-items-center"
         >
           {activeServices.map((service) => (
-            <ServiceCard
-              key={service.id}
-              service={service}
-              onClick={() => setSelectedService(service)}
-            />
+            <div key={service.id} className="w-full max-w-[280px] h-full">
+              <ServiceCard
+                service={service}
+                onClick={() => setSelectedService(service)}
+              />
+            </div>
           ))}
         </motion.div>
 

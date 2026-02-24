@@ -21,7 +21,7 @@ export default function Hero() {
             variants={{
               animate: { transition: { staggerChildren: 0.2 } }
             }}
-            className="relative z-20 md:-mr-20" // Ajuste -mr-20 para controlar a sobreposição
+            className="relative z-20 md:-mr-20 max-md:text-center md:pr-4 lg:pr-0"
           >
             <motion.h2
               variants={fadeInUp}
@@ -48,13 +48,13 @@ export default function Hero() {
 
             <motion.div
               variants={fadeInUp}
-              className="mt-10 flex gap-4"
+              className="mt-10 flex gap-4 max-md:justify-center"
             >
               <a href="#contato">
                 <Button
                   variant="primary"
                   size="lg"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 md:px-4 md:py-2 md:text-sm lg:px-6 lg:py-3 lg:text-base whitespace-nowrap"
                 >
                   CRIAR ORÇAMENTO
                   <img
@@ -72,12 +72,12 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex justify-center md:justify-end mt-10 md:mt-0 -ml-10"
+            className="flex justify-center md:justify-end mt-10 md:mt-0 -ml-10 max-md:ml-0 md:ml-4 lg:ml-0"
           >
             <img
               src="/images/bonequinha.svg"
               alt="Ilustração"
-              className="w-full max-w-3xl object-contain"
+              className="w-full max-w-3xl md:max-w-2xl lg:max-w-3xl object-contain"
             />
           </motion.div>
         </div>
