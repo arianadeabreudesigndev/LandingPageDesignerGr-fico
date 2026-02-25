@@ -1,4 +1,4 @@
-# Landing Page - Designer Gráfico 2026
+# Landing Page Designer
 
 > **short_description:** Site profissional para designer gráfico com agenda dinâmica, serviços, promoções e formulário de contato integrado;
 >
