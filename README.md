@@ -1,8 +1,10 @@
 # Landing Page - Designer Gráfico 2026
 
-> **short_description:** Site profissional para designer gráfico com agenda dinâmica, serviços, promoções e formulário de contato integrado.
+> **short_description:** Site profissional para designer gráfico com agenda dinâmica, serviços, promoções e formulário de contato integrado;
 >
-> **full_description:** Landing page desenvolvida para apresentar serviços de design gráfico, com seções de herói, agenda interativa (círculos de progresso alimentados por Supabase), promoção sazonal, cards de serviços com ícones autorais e formulário de contato otimizado para conversão. Design responsivo, animações suaves e código modular com Next.js, TypeScript e Tailwind CSS.
+> **full_description:** Landing page desenvolvida para apresentar serviços de design gráfico, com seções de herói, agenda interativa (círculos de progresso alimentados por Supabase), promoção sazonal, cards de serviços com ícones autorais e formulário de contato otimizado para conversão. Design responsivo, animações suaves e código modular com Next.js, TypeScript e Tailwind CSS;
+>
+> **technologies:** React, Next.js, TypeScript, Tailwind CSS, Supabase;
 
 ---
 
