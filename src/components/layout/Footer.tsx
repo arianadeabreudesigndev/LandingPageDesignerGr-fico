@@ -82,9 +82,9 @@ export default function Footer() {
 
         {/* Rodapé final: no mobile, Política, Termos, Copyright (nessa ordem) */}
         <div className="flex flex-col items-center text-sm text-gray-400 pt-6 space-y-2 md:flex-row md:justify-between md:space-y-0">
-          <a href="#" className="hover:text-white order-1 md:order-none">Política de Privacidade</a>
+          <a href="/politica-privacidade" className="hover:text-white order-1 md:order-none">Política de Privacidade</a>
           <p className="order-3 md:order-none">© 2026 Ariana de Abreu. Todos os direitos reservados.</p>
-          <a href="#" className="hover:text-white order-2 md:order-none">Termos de Serviço</a>
+          <a href="/termos-servico" className="hover:text-white order-2 md:order-none">Termos de Serviço</a>
         </div>
       </Container>
     </footer>
