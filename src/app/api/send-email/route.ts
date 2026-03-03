@@ -36,8 +36,33 @@ export async function POST(request: Request) {
       `,
     });
 
-    // Incrementar o campo em_analise no Supabase
     const currentMonth = getCurrentMonth();
+
+    // Verifica se já existe um registro para o mês atual
+    const { data: existing, error: checkError } = await supabase
+      .from('agenda')
+      .select('id')
+      .eq('mes', currentMonth)
+      .maybeSingle();
+
+    if (checkError) {
+      console.error('Erro ao verificar mês:', checkError);
+    }
+
+    // Se não existir, insere um novo registro com valores iniciais
+    if (!existing) {
+      const { error: insertError } = await supabase
+        .from('agenda')
+        .insert({ vagas: 5, em_analise: 0, fila: 0, finalizados: 0, mes: currentMonth });
+
+      if (insertError) {
+        console.error('Erro ao inserir mês:', insertError);
+      } else {
+        console.log(`Registro criado para o mês ${currentMonth}`);
+      }
+    }
+
+    // Incrementa o contador em_analise (a função já lida com a linha existente)
     const { error: supabaseError } = await supabase.rpc('increment_em_analise', {
       target_month: currentMonth,
     });
