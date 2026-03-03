@@ -22,8 +22,8 @@ export async function POST(request: Request) {
 
     const { nome, sobrenome, email, telefone, mensagem } = parsed.data;
 
-    // Enviar e-mail via Resend
-    await resend.emails.send({
+    // Envia e-mail (dispara em paralelo)
+    const emailPromise = resend.emails.send({
       from: 'onboarding@resend.dev',
       to: 'arianadeabreudesigndev@gmail.com',
       subject: 'Novo orçamento solicitado',
@@ -37,44 +37,25 @@ export async function POST(request: Request) {
     });
 
     const currentMonth = getCurrentMonth();
+    console.log('[API] Mês atual:', currentMonth);
 
-    // Verifica se já existe um registro para o mês atual
-    const { data: existing, error: checkError } = await supabase
-      .from('agenda')
-      .select('id')
-      .eq('mes', currentMonth)
-      .maybeSingle();
-
-    if (checkError) {
-      console.error('Erro ao verificar mês:', checkError);
-    }
-
-    // Se não existir, insere um novo registro com valores iniciais
-    if (!existing) {
-      const { error: insertError } = await supabase
-        .from('agenda')
-        .insert({ vagas: 5, em_analise: 0, fila: 0, finalizados: 0, mes: currentMonth });
-
-      if (insertError) {
-        console.error('Erro ao inserir mês:', insertError);
-      } else {
-        console.log(`Registro criado para o mês ${currentMonth}`);
-      }
-    }
-
-    // Incrementa o contador em_analise (a função já lida com a linha existente)
+    // Incrementa contador no Supabase usando a função RPC
     const { error: supabaseError } = await supabase.rpc('increment_em_analise', {
       target_month: currentMonth,
     });
 
     if (supabaseError) {
-      console.error('Erro ao incrementar contador no Supabase:', supabaseError);
+      console.error('[API] Erro ao incrementar no Supabase:', JSON.stringify(supabaseError, null, 2));
+    } else {
+      console.log('[API] Contador incrementado com sucesso');
     }
 
-    // Retornar sucesso (apenas e-mail)
+    // Aguarda o e-mail terminar (opcional – pode ser removido se quiser mais velocidade)
+    await emailPromise;
+
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Erro na API:', error);
+    console.error('[API] Erro geral:', error);
     return NextResponse.json({ error: 'Erro ao enviar' }, { status: 500 });
   }
 }
