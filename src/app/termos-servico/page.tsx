@@ -37,7 +37,7 @@ export default function TermosServico() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-primary mb-4">3. CONTRATAÇÃO DOS SERVIÇOS</h2>
-            
+
             <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">3.1. Orçamento e Proposta</h3>
             <p className="text-gray-700">
               O orçamento é gratuito e válido por 15 dias. Após a aprovação, será enviada uma proposta comercial detalhando escopo, prazos, valores e formas de pagamento. A contratação efetiva‑se com o aceite da proposta e o pagamento da entrada.
@@ -65,7 +65,7 @@ export default function TermosServico() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-primary mb-4">4. PRAZOS E ENTREGAS</h2>
-            
+
             <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">4.1. Prazos</h3>
             <p className="text-gray-700">
               Os prazos são informados na proposta e contam a partir da aprovação do briefing. Trabalhamos com prazos variáveis conforme a complexidade do projeto:
@@ -96,7 +96,7 @@ export default function TermosServico() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-primary mb-4">5. REVISÕES E ALTERAÇÕES</h2>
-            
+
             <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">5.1. Revisões inclusas</h3>
             <p className="text-gray-700">
               Cada serviço inclui um número determinado de revisões (ex: logotipo inclui 2 revisões). As revisões devem ser solicitadas por <strong>e-mail ou WhatsApp (por escrito)</strong> e ser claras e objetivas. Não serão aceitas solicitações de revisão por ligação ou áudio, a fim de garantir o registro formal das alterações solicitadas.
@@ -115,37 +115,27 @@ export default function TermosServico() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-primary mb-4">6. PAGAMENTOS</h2>
-            
+
             <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">6.1. Formas de pagamento</h3>
             <p className="text-gray-700">
-              Aceitamos as seguintes formas de pagamento:
+              Aceitamos PIX, transferência bancária e dinheiro (para clientes de Saquarema e região).
             </p>
-            <ul className="list-disc pl-6 text-gray-700">
-              <li><strong>PIX</strong> (transferência instantânea);</li>
-              <li><strong>Transferência bancária</strong> (depósito ou TED);</li>
-              <li><strong>Dinheiro</strong> (apenas para clientes da cidade de Saquarema e região, mediante encontro presencial combinado).</li>
-            </ul>
 
             <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">6.2. Condições de pagamento</h3>
             <ul className="list-disc pl-6 text-gray-700">
-              <li><strong>Projetos até R$500:</strong> pagamento integral antes do início.</li>
-              <li><strong>Projetos acima de R$500:</strong> 50% de entrada e 50% na entrega final (ou conforme acordado no Contrato de Segurança).</li>
+              <li><strong>Projetos de valor inferior a R$500:</strong> 30% de entrada para início da confecção e 70% antes da entrega final.</li>
+              <li><strong>Projetos a partir de R$500:</strong> 50% de entrada e 50% antes da entrega final (conforme Contrato de Segurança).</li>
             </ul>
 
             <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">6.3. Atraso no pagamento</h3>
             <p className="text-gray-700">
-              O atraso superior a 5 dias no pagamento da(s) parcela(s) pode suspender o projeto. Após 15 dias, o projeto poderá ser cancelado, retendo-se 30% do valor já pago como compensação pelos serviços prestados.
-            </p>
-
-            <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">6.4. Liberação dos arquivos</h3>
-            <p className="text-gray-700">
-              <strong>Os arquivos finais só serão entregues após a quitação integral do projeto.</strong> Mesmo após a aprovação do Cliente, o acesso aos arquivos (download, link) será concedido somente quando o pagamento estiver confirmado.
+              O atraso superior a 5 dias no pagamento da(s) parcela(s) pode suspender o projeto. Após 15 dias, o projeto poderá ser cancelado, retendo-se os valores já pagos como compensação pelos serviços prestados.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-primary mb-4">7. PROPRIEDADE INTELECTUAL</h2>
-            
+
             <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">7.1. Direitos autorais</h3>
             <p className="text-gray-700">
               A propriedade intelectual dos arquivos criados é transferida ao Cliente somente após o pagamento integral do projeto. Enquanto não quitado, a Profissional detém todos os direitos sobre o material.
@@ -167,7 +157,7 @@ export default function TermosServico() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-primary mb-4">8. CANCELAMENTO E REEMBOLSO</h2>
-            
+
             <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">8.1. Cancelamento pelo Cliente</h3>
             <ul className="list-disc pl-6 text-gray-700">
               <li><strong>Antes do início:</strong> reembolso integral de qualquer valor pago.</li>
@@ -230,7 +220,7 @@ export default function TermosServico() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-primary mb-4">13. DISPOSIÇÕES GERAIS</h2>
-            
+
             <h3 className="text-xl font-medium text-gray-800 mt-6 mb-2">13.1. Alterações nos Termos</h3>
             <p className="text-gray-700">
               Podemos atualizar estes Termos periodicamente. A versão mais recente estará sempre disponível nesta página. O uso continuado dos serviços após alterações constitui aceitação.
