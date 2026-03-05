@@ -1,52 +1,45 @@
-import { supabase } from '@/lib/supabaseClient'
-import Container from '../ui/Container'
-import Section from '../ui/Section'
-import AgendaStats from '../agenda/AgendaStats'
-import Link from 'next/link'
+import { supabase } from '@/lib/supabaseClient';
+import Container from '../ui/Container';
+import Section from '../ui/Section';
+import AgendaStats from '../agenda/AgendaStats';
 
 function getCurrentMonth() {
-  const date = new Date()
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+  const date = new Date();
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
 }
 
 export default async function Agenda() {
-  const currentMonth = getCurrentMonth()
+  const currentMonth = getCurrentMonth();
 
-  // Busca os dados da agenda para o mês atual
   const { data, error } = await supabase
     .from('agenda')
     .select('*')
     .eq('mes', currentMonth)
-    .single()
+    .single();
 
-  // Tratamento de erro: se houver erro, usa fallback e exibe no console
   if (error) {
-    console.error('Erro ao carregar agenda:', error)
-    const fallbackData = { vagas: 5, em_analise: 0, fila: 0, finalizados: 0 }
+    console.error('Erro ao carregar agenda:', error);
+    const fallbackData = { vagas: 5, em_analise: 0, fila: 0, finalizados: 0 };
     const agendaData = {
       vagas: { current: fallbackData.vagas, max: 20 },
       emAnalise: { current: fallbackData.em_analise, max: 30 },
       fila: { current: fallbackData.fila, max: 10 },
       finalizados: { current: fallbackData.finalizados, max: 100 }
-    }
-    return renderAgenda(agendaData)
+    };
+    return renderAgenda(agendaData);
   }
 
-  // Se não houver dados (data === null), usa fallback
-  const dbData = data || { vagas: 5, em_analise: 0, fila: 0, finalizados: 0 }
-
-  // Transforma os dados do banco (números) para o formato com current e max
+  const dbData = data || { vagas: 5, em_analise: 0, fila: 0, finalizados: 0 };
   const agendaData = {
     vagas: { current: dbData.vagas, max: 20 },
     emAnalise: { current: dbData.em_analise, max: 30 },
     fila: { current: dbData.fila, max: 10 },
     finalizados: { current: dbData.finalizados, max: 100 }
-  }
+  };
 
-  return renderAgenda(agendaData)
+  return renderAgenda(agendaData);
 }
 
-// Função auxiliar para renderizar o conteúdo da agenda (evita repetição de código)
 function renderAgenda(agendaData: any) {
   return (
     <Section id="agenda">
@@ -68,13 +61,13 @@ function renderAgenda(agendaData: any) {
 
         <AgendaStats data={agendaData} />
 
-        <Link
+        <a
           href="#contato"
           className="inline-flex items-center gap-2 text-2xl font-semibold text-primary hover:text-gray-800 transition-colors mt-6"
         >
           AGENDE SUA PEÇA
-        </Link>
+        </a>
       </Container>
     </Section>
-  )
+  );
 }
