@@ -5,3 +5,17 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+#agenda {
+  scroll-margin-top: 185px;
+}
+
+#promo {
+  scroll-margin-top: 160px;
+}
+
+#servicos,
+#contato {
+  scroll-margin-top: 70px;
+}
