@@ -162,9 +162,9 @@ export interface Service {
     },
     {
       id: 'capas-youtube-twitch',
-      title: 'Capas para YouTube/Twitch',
-      shortDescription: 'Banners e artes para canais',
-      fullDescription: 'Design de capas para YouTube, Twitch e outras plataformas. Criação com sua foto, se desejar, ou elementos visuais. Inclui banner, ícone e artes complementares. Prazo de até 3 dias úteis.',
+      title: 'Capas de Redes Sociais',
+      shortDescription: 'Banners e artes para YouTube, Twitch e outras plataformas',
+      fullDescription: 'Design de capas para YouTube, Twitch e outras redes sociais. Criação com sua foto, se desejar, ou elementos visuais. Inclui banner, ícone e artes complementares. Prazo de até 3 dias úteis.',
       includes: [
         'Banner do canal',
         'Ícone/avatar',
