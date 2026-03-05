@@ -10,14 +10,14 @@ export default function TermosServico() {
 
         <article className="prose prose-lg max-w-none">
           <h1 className="text-4xl font-bold text-[#1E1E1E] mb-2">Termos de Serviço</h1>
-          <p className="text-gray-500 mb-8">Última atualização: 26 de fevereiro de 2026</p>
+          <p className="text-gray-500 mb-8">Última atualização: 1 de Janeiro de 2026</p>
 
           <hr className="my-8 border-gray-200" />
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-primary mb-4">1. ACEITAÇÃO DOS TERMOS</h2>
             <p className="text-gray-700">
-              Ao acessar ou contratar os serviços da <strong>Ariana de Abreu — Designer Gráfico</strong> (doravante denominada "Profissional", "nós" ou "nosso"), você ("Cliente" ou "usuário") concorda em cumprir e estar vinculado a estes Termos de Serviço. Caso não concorde com qualquer parte destes termos, solicitamos que não utilize nossos serviços ou entre em contato para esclarecimentos.
+              Ao acessar ou contratar os serviços da <strong>Ariana de Abreu | Designer Gráfico</strong> (doravante denominada "Profissional", "nós" ou "nosso"), você ("Cliente" ou "usuário") concorda em cumprir e estar vinculado a estes Termos de Serviço. Caso não concorde com qualquer parte destes termos, solicitamos que não utilize nossos serviços ou entre em contato para esclarecimentos.
             </p>
             <p className="text-gray-700 mt-4">
               Estes Termos aplicam-se a todos os serviços prestados, incluindo design de logotipos, identidade visual, landing pages, materiais gráficos, consultorias e quaisquer outros serviços ofertados em nosso site.

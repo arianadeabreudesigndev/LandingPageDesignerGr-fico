@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 export default function WhatsAppButton() {
-  const phoneNumber = '5522996127823'; // sem espaços ou caracteres especiais
+  const phoneNumber = '5522996127823'; 
   const message = encodeURIComponent('Olá! Vim pelo seu site e gostaria de mais informações.');
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 

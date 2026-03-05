@@ -19,13 +19,13 @@ export default function PoliticaPrivacidade() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-primary mb-4">1. QUEM SOMOS</h2>
             <p className="text-gray-700 mb-4">
-              A <strong>Ariana de Abreu — Designer Gráfico</strong> valoriza a privacidade e a proteção dos dados pessoais de seus clientes e visitantes. Esta Política de Privacidade explica como coletamos, usamos, compartilhamos e protegemos suas informações em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+              A <strong>Ariana de Abreu | Designer Gráfico</strong> valoriza a privacidade e a proteção dos dados pessoais de seus clientes e visitantes. Esta Política de Privacidade explica como coletamos, usamos, compartilhamos e protegemos suas informações em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
             </p>
             <p className="text-gray-700"><strong>Controladora dos dados:</strong></p>
             <ul className="list-disc pl-6 text-gray-700">
               <li><strong>Nome:</strong> Ariana de Abreu (Designer Gráfico)</li>
               <li><strong>E-mail para contato:</strong> arianadeabreudesigndev@gmail.com</li>
-              <li><strong>Website:</strong> https://arianaabreudesign-161zaf9h6.vercel.app</li>
+              <li><strong>Website:</strong> https://arianadeabreudesigndev.vercel.app</li>
             </ul>
           </section>
 
